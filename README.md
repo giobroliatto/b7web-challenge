@@ -8,6 +8,6 @@ This 7 projects were designed by [B7Web](https://b7web.com.br/), whose made 7 vi
 
 Each project was released in a different day, between July 19 and 25, 2021.
 
-- Project 1: the first project is an interactive Keyboard/Drum system, where you can play 9 different drum parts with your keyboard and also set a composition to play, seting up as much keys as you want.
+- Project 01: the first project is an interactive Keyboard/Drum system, where you can play 9 different drum parts with your keyboard and also set a composition to play, seting up as much keys as you want.
 
-- Project 2: this project is a fully functional analog clock, working based on the current time of user's machine.
+- Project 02: this project is a fully functional analog clock, working based on the current time of user's machine. The digital clock color changing system was an idea developed and implemented by me, and it was not in the original B7Web's project.
