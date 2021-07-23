@@ -3,6 +3,7 @@ const weekDay = date.getDay()
 const day = date.getDate()
 const month = date.getMonth()
 const year = date.getFullYear()
+const offset = date.getTimezoneOffset() / -60
 
 const monthNames = [
   'January',
@@ -52,7 +53,12 @@ document.querySelector('.busca').addEventListener('submit', async event => {
         temp: json.main.temp,
         tempIcon: json.weather[0].icon,
         windSpeed: json.wind.speed,
-        windAngle: json.wind.deg
+        windAngle: json.wind.deg,
+        sunrise: json.sys.sunrise * 1000,
+        sunset: json.sys.sunset * 1000,
+        timezone: json.timezone / 3600,
+        maxTemp: json.main.temp_max,
+        minTemp: json.main.temp_min
       })
     } else {
       clearInfo()
@@ -60,6 +66,7 @@ document.querySelector('.busca').addEventListener('submit', async event => {
     }
   }
 
+  /* SWIPER SCRIPT */
   const swiper = new Swiper('.swiper-container', {
     slidesPerView: 1,
     navigation: {
@@ -73,6 +80,7 @@ document.querySelector('.busca').addEventListener('submit', async event => {
 function showInfo(json) {
   showWarning('')
 
+  /* SLIDE 1 */
   document.querySelector('.titulo').innerHTML = `${json.name}, ${json.country}`
   document.querySelector('.tempInfo').innerHTML = `${json.temp} <sup>°C</sup>`
   document.querySelector(
@@ -104,7 +112,56 @@ function showInfo(json) {
   }
   document.querySelector('.ano').innerHTML = `${year}`
 
+  /* SLIDE 2 */
+  /* FIXING SUNRISE AND SUNSET (UNIX TO TIMESTAMP) */
+  const sunriseTimeStamp = new Date(json.sunrise)
+  const sunsetTimeStamp = new Date(json.sunset)
+
+  const sunriseHour = sunriseTimeStamp
+    .toLocaleDateString('pt-BR', {
+      hour: 'numeric'
+    })
+    .split(' ')
+  const sunriseMinute = sunriseTimeStamp
+    .toLocaleDateString('pt-BR', {
+      minute: 'numeric'
+    })
+    .split(' ')
+  const sunsetHour = sunsetTimeStamp
+    .toLocaleDateString('pt-BR', {
+      hour: 'numeric'
+    })
+    .split(' ')
+  const sunsetMinute = sunsetTimeStamp
+    .toLocaleDateString('pt-BR', {
+      minute: 'numeric'
+    })
+    .split(' ')
+
+  document.querySelector('.sunriseTime').innerHTML = `${fixZero(
+    parseInt(sunriseHour[1]) + (json.timezone - offset)
+  )}:${fixZero(parseInt(sunriseMinute[1]))}`
+  document.querySelector('.sunsetTime').innerHTML = `${fixZero(
+    parseInt(sunsetHour[1]) + (json.timezone - offset)
+  )}:${fixZero(parseInt(sunsetMinute[1]))}`
+
+  document.querySelector('.maxTempInfo').innerHTML = `${Math.round(
+    json.maxTemp
+  )}`
+  document.querySelector('.minTempInfo').innerHTML = `${Math.round(
+    json.minTemp
+  )}`
+
+  /* SHOW RESULTS BOX */
   document.querySelector('.resultado').style.display = 'block'
+}
+
+function fixZero(time) {
+  if (time < 10) {
+    return '0' + time
+  } else {
+    return time
+  }
 }
 
 function clearInfo() {
