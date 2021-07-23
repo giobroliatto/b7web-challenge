@@ -1,3 +1,34 @@
+const date = new Date()
+const weekDay = date.getDay()
+const day = date.getDate()
+const month = date.getMonth()
+const year = date.getFullYear()
+
+const monthNames = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December'
+]
+
+const weekDayNames = [
+  'Sunday',
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday'
+]
+
 document.querySelector('.busca').addEventListener('submit', async event => {
   event.preventDefault() // previni o comportamento padrão, nesse caso é enviar o formulário e limpar o input
 
@@ -28,6 +59,15 @@ document.querySelector('.busca').addEventListener('submit', async event => {
       showWarning('City not found')
     }
   }
+
+  const swiper = new Swiper('.swiper-container', {
+    slidesPerView: 1,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    },
+    keyboard: true
+  })
 })
 
 function showInfo(json) {
@@ -49,6 +89,20 @@ function showInfo(json) {
   document.querySelector('.ventoPonto').style.transform = `rotate(${
     json.windAngle + 270
   }deg)`
+
+  document.querySelector('.diaSemana').innerHTML = `${weekDayNames[weekDay]}`
+  document.querySelector('.mes').innerHTML = `${monthNames[month]}`
+  document.querySelector('.dia').innerHTML = `${day}`
+  if (day === 1 || day === 21 || day === 31) {
+    document.querySelector('.numeral').innerHTML = 'st,'
+  } else if (day === 2 || day === 22) {
+    document.querySelector('.numeral').innerHTML = 'nd,'
+  } else if (day === 3 || day === 23) {
+    document.querySelector('.numeral').innerHTML = `rd,`
+  } else {
+    document.querySelector('.numeral').innerHTML = `th,`
+  }
+  document.querySelector('.ano').innerHTML = `${year}`
 
   document.querySelector('.resultado').style.display = 'block'
 }

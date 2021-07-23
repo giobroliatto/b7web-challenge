@@ -5,10 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather!</title>
+
+    <!-- STYLE -->
     <link rel="stylesheet" href="style.css" />
+
+    <!-- FONTS -->
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@400;500;700&display=swap"
       rel="stylesheet"
+    />
+
+    <!-- SWIPER -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
   </head>
   <body>
@@ -22,29 +32,48 @@
     <div class="resultado">
       <div class="titulo">--</div>
 
-      <div class="info">
-        <div class="temp">
-          <div class="tempTitulo">Temperature</div>
-          <div class="tempInfo">-- <sup>ºC</sup></div>
-          <img src="http://openweathermap.org/img/wn/10d@2x.png" />
-        </div>
-        <div class="vento">
-          <div class="ventoTitulo">Wind</div>
-          <div class="ventoInfo">-- <span>km/h</span></div>
-          <div class="ventoArea">
-            <div class="ventoPonto" style="transform: rotate(0deg)"></div>
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="info">
+              <div class="temp">
+                <div class="tempTitulo">Temperature</div>
+                <div class="tempInfo">-- <sup>ºC</sup></div>
+                <img src="http://openweathermap.org/img/wn/10d@2x.png" />
+              </div>
+
+              <div class="vento">
+                <div class="ventoTitulo">Wind</div>
+                <div class="ventoInfo">-- <span>km/h</span></div>
+                <div class="ventoArea">
+                  <div class="ventoPonto" style="transform: rotate(0deg)"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="diaSemana">---</div>
+
+            <div class="data">
+              <div class="mes">Month</div>
+              <div class="dia">Day</div>
+              <span class="numeral">--</span>
+              <div class="ano">Year</div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div>Testin</div>
           </div>
         </div>
-        <div class="data">
-          <div class="dia"></div>
-          <div class="mes"></div>
-          <div class="ano"></div>
-          <div class="dataInfo">Month Day Year</div>
-        </div>
+
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
       </div>
     </div>
 
     <div class="aviso"></div>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <script src="script.js"></script>
   </body>
