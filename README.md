@@ -16,4 +16,6 @@ Each project was released in a different day, between July 19 and 25, 2021.
 
 - Project 02: this project is a fully functional analog clock, working based on the current time of user's machine. The digital clock color changing system was an idea developed and implemented by me, and it was not in the original B7Web's project. :clock3:
 
-- Project 03: with [OpenWeather](https://openweathermap.org/)'s API assistance, this project brings the local weather for over 200,000 cities on the globe. The first version (from B7Web) had weather and wind information, and my upgrades brought a swiper interface with sunrise and sunset infos, as well as maximum and minimum temperatures for the day. 🌦️
+- Project 03: with [OpenWeather](https://openweathermap.org/)'s API assistance, this project brings the local weather for over 200,000 cities on the globe. The first version (from B7Web) had weather and wind information, and my upgrades brought a swiper interface with sunrise and sunset infos, as well as maximum and minimum temperatures for the day. :sun_behind_rain_cloud:
+
+- Project 04: the classic tic-tac-toe game, playable by two players and with a colorful interface system designed by me. The project contains not only the game table but also a board with X or O turn, the winner and a restart button. :joystick:
