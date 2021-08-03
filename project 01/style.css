@@ -17,11 +17,13 @@ h1 {
   color: #fff;
   margin-bottom: 20px;
 }
+
 .keys {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
 }
+
 .key {
   width: 80px;
   height: 80px;
