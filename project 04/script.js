@@ -29,12 +29,19 @@ function itemClick(event) {
   let item = event.target.getAttribute('data-item')
   let color = document.querySelector(`div[data-item=${item}`)
 
+  if (gameStatus) {
+    document.querySelector('.vez').classList.remove('blue')
+    document.querySelector('.vez').classList.remove('pink')
+  }
+
   if (gameStatus && frame[item] === '') {
     frame[item] = turn
     if (turn === 'X') {
       color.classList.add('pink')
+      document.querySelector('.vez').classList.add('blue')
     } else {
       color.classList.add('blue')
+      document.querySelector('.vez').classList.add('pink')
     }
     renderSquare()
     toggleTurn()
@@ -43,10 +50,18 @@ function itemClick(event) {
 
 function reset() {
   warning = ''
+  document.querySelector('.vez').classList.remove('resultado')
+  document.querySelector('.vez').classList.remove('pink')
+  document.querySelector('.vez').classList.remove('blue')
 
   let random = Math.floor(Math.random() * 2)
 
   turn = random === 0 ? 'X' : 'O'
+  if (turn === 'X') {
+    document.querySelector('.vez').classList.add('pink')
+  } else {
+    document.querySelector('.vez').classList.add('blue')
+  }
 
   for (let i in frame) {
     frame[i] = ''
@@ -71,6 +86,12 @@ function renderSquare() {
 }
 
 function renderInfo() {
+  document.querySelector('.infotitulo').innerHTML = 'Turn:'
+  if (warning === 'X' || warning === 'O') {
+    document.querySelector('.infotitulo').innerHTML = 'WINNER!'
+  } else if (warning === 'Draw!') {
+    document.querySelector('.infotitulo').innerHTML = "It's a"
+  }
   document.querySelector('.vez').innerHTML = turn
   document.querySelector('.resultado').innerHTML = warning
 }
@@ -82,12 +103,21 @@ function toggleTurn() {
 
 function checkGame() {
   if (checkWinnerFor('X')) {
+    document.querySelector('.vez').classList.add('resultado')
+    document.querySelector('.vez').classList.remove('blue')
+    document.querySelector('.vez').classList.add('pink')
     warning = 'X'
     gameStatus = false
   } else if (checkWinnerFor('O')) {
+    document.querySelector('.vez').classList.add('resultado')
+    document.querySelector('.vez').classList.remove('pink')
+    document.querySelector('.vez').classList.add('blue')
     warning = 'O'
     gameStatus = false
   } else if (draw()) {
+    document.querySelector('.vez').classList.add('resultado')
+    document.querySelector('.vez').classList.remove('pink')
+    document.querySelector('.vez').classList.remove('blue')
     warning = 'Draw!'
     gameStatus = false
   }
