@@ -20,14 +20,22 @@ reset()
 
 /* EVENTS */
 document.querySelector('.reset').addEventListener('click', reset)
+
 document.querySelectorAll('.item').forEach(item => {
   item.addEventListener('click', itemClick)
 })
 
+var t = setInterval(function () {
+  var ele = document.querySelector('.blink')
+  ele.style.visibility = ele.style.visibility == 'hidden' ? '' : 'hidden'
+}, 350)
+
+document.querySelector(`div[data-item=a1]`)
+
 /* FUNCTIONS */
 function itemClick(event) {
   let item = event.target.getAttribute('data-item')
-  let color = document.querySelector(`div[data-item=${item}`)
+  let color = document.querySelector(`div[data-item=${item}]`)
 
   if (gameStatus) {
     document.querySelector('.vez').classList.remove('blue')
@@ -53,6 +61,8 @@ function reset() {
   document.querySelector('.vez').classList.remove('resultado')
   document.querySelector('.vez').classList.remove('pink')
   document.querySelector('.vez').classList.remove('blue')
+  document.querySelector('.blink').style.visibility = ''
+  document.querySelector('.infotitulo').classList.remove('blink')
 
   let random = Math.floor(Math.random() * 2)
 
@@ -89,6 +99,7 @@ function renderInfo() {
   document.querySelector('.infotitulo').innerHTML = 'Turn:'
   if (warning === 'X' || warning === 'O') {
     document.querySelector('.infotitulo').innerHTML = 'WINNER!'
+    document.querySelector('.infotitulo').classList.add('blink')
   } else if (warning === 'Draw!') {
     document.querySelector('.infotitulo').innerHTML = "It's a"
   }
