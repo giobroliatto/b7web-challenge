@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #191622;
+  font-family: 'DM Sans', Helvetica, sans-serif;
+  transition: 1s;
+}
+
+h1 {
+  color: #fff;
+  margin: 20px 0;
+}
+
+.progress {
+  height: 12.5px;
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  right: 1rem;
+  border: 1px solid #988aa8;
+  border-radius: 10px;
+}
+.progress--bar {
+  background-color: #6add5b;
+  height: 100%;
+  transition: all ease 0.5s;
+  border-radius: 10px;
+}
+
+.questionArea,
+.scoreArea {
+  display: none;
+}
+
+.questionArea {
+  max-width: 400px;
+  display: flex;
+  width: 100%;
+}
+
+.question {
+  color: #fff;
+  font-size: 18px;
+  margin: 20px 0;
+}
+.option {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  background-color: #13111b;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  color: #aaa;
+  font-size: 16px;
+  cursor: pointer;
+  border: 1px solid #9380a8;
+}
+.option span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #c369c6;
+  font-weight: bold;
+  border: 1px solid #c369c6;
+}
+.option:hover {
+  background-color: #2a263a;
+}
+
+.scoreArea {
+  background-color: #13111b;
+  padding: 20px;
+  border-radius: 20px;
+  margin: 10px;
+  text-align: center;
+  border: 2px dotted #9380a8;
+}
+.prizeImage {
+  width: auto;
+  height: 100px;
+  margin-bottom: 10px;
+}
+.scoreText1 {
+  color: #aaa;
+  font-size: 23px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.scorePct {
+  color: #0d630d;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.scoreArea button {
+  border: 2px solid #aaa;
+  color: #aaa;
+  font-size: 1rem;
+  font-family: 'DM Sans', Helvetica, sans-serif;
+  cursor: pointer;
+  background-color: #13111b;
+  border-radius: 0.5rem;
+  transition: color 0.2s, border 0.2s, border-radius 0.2s;
+  padding: 10px;
+  margin-top: 25px;
+  font-weight: bold;
+}
+
+.scoreArea button:hover {
+  color: #78d1e1;
+  border: 2px solid #78d1e1;
+  border-radius: 1rem;
+}
