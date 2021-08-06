@@ -23,3 +23,11 @@ Each project was released in a different day, between July 19 and 25, 2021.
 - Project 05: a simple project where you can draw with different colors on a canvas. Actually, the project seems simple but the code is kinda complex, where he tracks down the mouse position through JavaScript and adds several dots on the screen when the mouse is clicked, creating a continuous drawing. :art:
 
 - Project 06: for this one we got a quiz! All questions are shown on screen via JavaScript and, at the end, a board shows up your progress. In addition to other changes, I've created a background color effect on each question so you'll know if you got it right as soon as you answer. :memo:
+
+- Project 07: built entirely in JavaScript, this project let you drag boxes and drop them in a different box. This is a very useful function for many systems and is pretty simple to code it. :arrow_down:
+
+##
+
+This event was of great development of diverse knowledge in javascript, it made me know new features of the language, as well as new ways to solve problems.
+
+I would like to thank B7Web and bonieky for the opportunity to participate on this challenge.
