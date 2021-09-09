@@ -18,6 +18,79 @@ body {
   font-family: 'DM Sans', Helvetica, sans-serif;
 }
 
+h1 {
+  color: #fff;
+  margin: 20px 0;
+}
+
+.neutralArea {
+  width: 450px;
+  height: 150px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 2px solid #988aa8;
+  border-radius: 20px;
+  background-color: #1f1c2b;
+  transition: background-color 0.2s;
+}
+
+.item {
+  width: 100px;
+  height: 100px;
+  background-color: #0f0d16;
+  color: #fff;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: grab;
+  border-radius: 20px;
+  border: 1px solid #c369c6;
+  font-weight: bold;
+}
+
+.item.dragging {
+  opacity: 0.5;
+  transition: 0.1s;
+  border-radius: 50px;
+}
+
+.areas {
+  width: 460px;
+  display: flex;
+  margin-top: 20px;
+}
+
+.areas.correct .area {
+  border: 2px solid #6add5b;
+  transition: 1s;
+}
+
+.area {
+  width: 150px;
+  height: 150px;
+  border: 2px solid #988aa8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+  background-color: #1f1c2b;
+  transition: background-color 0.2s, border 1s;
+}
+
+.hover {
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: 0.2s;
+}
+
+footer {
+  position: absolute;
+  bottom: 30px;
+}
+
 .menu {
   display: flex;
   gap: 10px;
@@ -25,14 +98,14 @@ body {
 
 .menu-num,
 .act {
-  width: 80px;
-  height: 80px;
+  width: 50px;
+  height: 50px;
   border: 1px solid #988aa8;
   color: #988aa8;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 30px;
+  font-size: 20px;
   font-weight: bold;
   background-color: #13111b;
   border-radius: 0.5rem;
@@ -55,8 +128,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ffffff;
-  margin: 32px 0;
+  color: #988aa8;
+  margin: 16px 0;
   font-weight: bold;
-  font-size: 36px;
+  font-size: 18px;
 }
