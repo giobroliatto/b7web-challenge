@@ -31,3 +31,7 @@ Each project was released in a different day, between July 19 and 25, 2021.
 This event was of great development of diverse knowledge in javascript, it made me know new features of the language, as well as new ways to solve problems.
 
 I would like to thank B7Web and bonieky for the opportunity to participate on this challenge.
+
+##
+
+<h3 align="center">You can check all the projects [here](https://giobroliatto.github.io/b7web-challenge/)</h3>
