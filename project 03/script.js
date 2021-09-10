@@ -67,7 +67,7 @@ document.querySelector('.busca').addEventListener('submit', async event => {
   }
 
   /* SWIPER SCRIPT */
-  const swiper = new Swiper('.swiper-container', {
+  const swiper = new Swiper('.swiper', {
     slidesPerView: 1,
     navigation: {
       nextEl: '.swiper-button-next',
