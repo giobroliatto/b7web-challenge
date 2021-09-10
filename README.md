@@ -34,4 +34,4 @@ I would like to thank B7Web and bonieky for the opportunity to participate on th
 
 ##
 
-<h3 align="center">You can check all the projects [here](https://giobroliatto.github.io/b7web-challenge/)</h3>
+ #### <h3 align="center">You can check all the working projects [here](https://giobroliatto.github.io/b7web-challenge/)</h3>
